@@ -84,17 +84,7 @@ While this implementation focuses on **Vehicle Routing Problems**, the system is
     5. Solver Web API *(only if using the broker-based architecture)*  
     6. Execute VRP Service *(only if using direct client-server communication)*  
 
-
-5. **Usage:**
-
-    - Use the VRP Data Generator to create test input data.
-    - The Send Data Service will publish the data via RabbitMQ.
-    - The Broker Web API manages queue routing.
-    - Consume Data Service ensures synchronization and forwards data to the Solver Web API.
-    - The Execute VRP Service runs the solver and provides the results.
-    - Check logs or API endpoints for status and results.
-
-6. **Troubleshooting:**
+5. **Troubleshooting:**
 
     - If you encounter the error `MSB4236: The SDK 'Microsoft.NET.Sdk' specified could not be found`, ensure the .NET SDK is properly installed and your environment variables are set.
     - Make sure RabbitMQ service is running before starting related services.
