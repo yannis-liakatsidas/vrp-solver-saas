@@ -27,7 +27,8 @@ This solution leverages **RabbitMQ**, **Google OR-Tools**, and a **modular, serv
 | **Broker Web API**         | Publishes data to RabbitMQ queues for processing. |
 | **Consume Data Service**   | Subscribes to the appropriate queues, receives data, and synchronizes delivery to the solver. |
 | **Solver Web API**         | Receives data on the solver node, processes requests via RESTful endpoints. |
-| **Execute VRP Service**    | Implements the solver logic using [Google OR-Tools](https://developers.google.com/optimization), producing results for each VRP instance. |
+| **Execute VRP Service**    | Creates an instance of the OR-Tools solver and initiates the solving procedure. |
+| **OR-Tools Solver**        | Implements the solver logic using [Google OR-Tools](https://developers.google.com/optimization), producing results for each VRP instance. |
 
 ---
 
@@ -60,7 +61,50 @@ While this implementation focuses on **Vehicle Routing Problems**, the system is
 
 ### Running the Solution
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/vrp-solver-saas.git
-   cd vrp-solver-saas
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/yourusername/vrp-solver-saas.git
+    cd vrp-solver-saas
+    ```
+
+2. **Prerequisites:**
+
+    - [.NET SDK](https://dotnet.microsoft.com/download) (version 8.0)
+    - [RabbitMQ](https://www.rabbitmq.com/download.html) installed and running
+    - Google OR-Tools library (installed via NuGet or manual setup)
+
+3. **Setup Instructions:**
+
+    - Configure RabbitMQ settings (host, username, password) in the appropriate configuration files (`appsettings.json` or environment variables).
+    - Verify that all required NuGet packages are restored (Visual Studio should restore on build).
+
+4. **Build and run the projects:**
+
+    - Open the solution in Visual Studio.
+    - Build the entire solution.
+    - Run the services in the following order:
+        1. VRP Data Generator
+        2. Send Data Service
+        3. Broker Web API
+        4. Consume Data Service
+        5. Solver Web API
+        6. Execute VRP Service
+        7. OR-Tools Solver
+
+5. **Usage:**
+
+    - Use the VRP Data Generator to create test input data.
+    - The Send Data Service will publish the data via RabbitMQ.
+    - The Broker Web API manages queue routing.
+    - Consume Data Service ensures synchronization and forwards data to the Solver Web API.
+    - The Execute VRP Service runs the solver and provides the results.
+    - Check logs or API endpoints for status and results.
+
+6. **Troubleshooting:**
+
+    - If you encounter the error `MSB4236: The SDK 'Microsoft.NET.Sdk' specified could not be found`, ensure the .NET SDK is properly installed and your environment variables are set.
+    - Make sure RabbitMQ service is running before starting related services.
+    - If NuGet packages fail to restore, try running `dotnet restore` in the solution directory.
+
