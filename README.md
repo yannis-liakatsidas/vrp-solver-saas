@@ -53,9 +53,9 @@ While this implementation focuses on **Vehicle Routing Problems**, the system is
 
 ### Prerequisites
 
-- .NET 6 or higher
+- .NET 8
 - RabbitMQ (local or hosted)
-- Visual Studio 2022+
+- Visual Studio 2022
 - Internet access (for restoring NuGet packages)
 
 ### Running the Solution
@@ -64,57 +64,3 @@ While this implementation focuses on **Vehicle Routing Problems**, the system is
    ```bash
    git clone https://github.com/yourusername/vrp-solver-saas.git
    cd vrp-solver-saas
-### How to push your Visual Studio solution to the new GitHub repo
-
-1. **Clone the empty repo locally** (optional but recommended):
-
-
-    ```bash
-    git clone https://github.com/yourusername/your-repo.git
-    cd your-repo
-    ```
-
-2. **Copy your Visual Studio solution files into this folder**
-
-    - Copy your `.sln` file, project folders, source code, `.gitignore` (if you have one), and all other relevant files into this cloned folder.
-
-3. **Check or add `.gitignore`**
-
-    - Make sure you have a `.gitignore` for Visual Studio projects to avoid committing unnecessary files.
-    - If you don’t have one, create it or download a standard Visual Studio `.gitignore`.
-
-4. **Add all files to Git**
-
-    
-    ```bash
-    git add .
-    ```
-
-5. **Commit your changes**
-
-    
-    ```bash
-    git commit -m "Initial commit: add Visual Studio solution and projects"
-    ```
-
-6. **Push your commit to GitHub**
-
-    If your local branch is named `master` but your remote expects `main`, rename your branch first:
-
-    
-    ```bash
-    git branch -M main
-    ```
-
-    Then push:
-
-    
-    ```bash
-    git push -u origin main
-    ```
-
-7. **Verify**
-
-    - Go to your GitHub repository in your browser.
-    - Refresh the page to see all your files uploaded.
-
