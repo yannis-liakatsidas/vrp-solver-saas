@@ -24,6 +24,7 @@ This solution leverages **RabbitMQ**, **Google OR-Tools**, and a **modular, serv
 |------------------------|-------------|
 | **VRP Data Generator**     | Generates input data for testing various VRP scenarios. |
 | **Send Data Service**      | Sends generated data to the message broker. |
+| **RabbitMQ**               | Creates and initializes the necessary RabbitMQ components (exchanges, queues, mapping keys etc.) |
 | **Broker Web API**         | Publishes data to RabbitMQ queues for processing. |
 | **Consume Data Service**   | Subscribes to the appropriate queues, receives data, and synchronizes delivery to the solver. |
 | **Solver Web API**         | Receives data on the solver node, processes requests via RESTful endpoints. |
@@ -74,16 +75,15 @@ While this implementation focuses on **Vehicle Routing Problems**, the system is
 
 4. **Build and run the projects:**
 
-    - Open the solution in Visual Studio.
-    - Build the entire solution.
-    - Run the services in the following order (in their respective, distinct servers, if preferred):
-        1. VRP Data Generator
-        2. Send Data Service
-        3. Broker Web API
-        4. Consume Data Service
-        5. Solver Web API
-        6. Execute VRP Service
-        7. OR-Tools Solver
+    Run the services in the following order depending on your architecture:
+
+    1. VRP Data Generator  
+    2. Send Data Service *(currently working for the broker-based architecture)*  
+    3. Broker Web API *(only if using the broker-based architecture)*  
+    4. Consume Data Service *(only if using the broker-based architecture)*  
+    5. Solver Web API *(only if using the broker-based architecture)*  
+    6. Execute VRP Service *(only if using direct client-server communication)*  
+
 
 5. **Usage:**
 
