@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ExecuteVRPService": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\johnt\\source\\repos\\DiplomaThesisSolution\\GenerateDataService\\locations_1000.json\" 50"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SendDataService": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\johnt\\source\\repos\\DiplomaThesisSolution\\GenerateDataService\\demoLocations1.json VRP"
+    }
+  }
+}
