@@ -50,14 +50,6 @@ While this implementation focuses on **Vehicle Routing Problems**, the system is
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- .NET 8
-- RabbitMQ (local or hosted)
-- Visual Studio 2022
-- Internet access (for restoring NuGet packages)
 
 ### Running the Solution
 
@@ -84,7 +76,7 @@ While this implementation focuses on **Vehicle Routing Problems**, the system is
 
     - Open the solution in Visual Studio.
     - Build the entire solution.
-    - Run the services in the following order:
+    - Run the services in the following order (in their respective, distinct servers, if preferred):
         1. VRP Data Generator
         2. Send Data Service
         3. Broker Web API
@@ -107,4 +99,3 @@ While this implementation focuses on **Vehicle Routing Problems**, the system is
     - If you encounter the error `MSB4236: The SDK 'Microsoft.NET.Sdk' specified could not be found`, ensure the .NET SDK is properly installed and your environment variables are set.
     - Make sure RabbitMQ service is running before starting related services.
     - If NuGet packages fail to restore, try running `dotnet restore` in the solution directory.
-
